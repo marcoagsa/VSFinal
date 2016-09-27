@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="com.example.marcosa.myapplication.Inicio">
+
+
+    <TextView
+        android:id="@+id/NPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome do Player"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorAccent"
+        android:textAlignment="center" />
+
+
+    <ImageButton
+        android:id="@+id/SE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/anterior"/>
+
+    <ImageButton
+        android:id="@+id/SP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/atomic_robot"
+        android:background="@null" />
+
+
+    <ImageButton
+        android:id="@+id/SD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/seguinte"/>
+
+
+</RelativeLayout>

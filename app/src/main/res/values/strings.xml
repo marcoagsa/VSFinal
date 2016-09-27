@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">VS</string>
+    <string name="App">VS</string>
+    <string name="Play">Play</string>
+    <string name="Desc">Description</string>
+    <string name="Select">Select Your Player</string>
 </resources>
