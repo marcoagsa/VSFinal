@@ -1,4 +1,4 @@
-package com.example.marcosa.myapplication;
+package com.example.marcosa.vs;
 
 import android.animation.ObjectAnimator;
 import android.app.Dialog;

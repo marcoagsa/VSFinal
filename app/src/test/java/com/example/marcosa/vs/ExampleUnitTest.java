@@ -1,4 +1,4 @@
-package com.example.marcosa.myapplication;
+package com.example.marcosa.vs;
 
 import org.junit.Test;
 

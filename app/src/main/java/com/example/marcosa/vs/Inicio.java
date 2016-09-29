@@ -1,4 +1,4 @@
-package com.example.marcosa.myapplication;
+package com.example.marcosa.vs;
 
 
 import android.content.Intent;
@@ -8,12 +8,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
 
 public class Inicio extends AppCompatActivity {
 
+
+    private Button butao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +34,6 @@ public class Inicio extends AppCompatActivity {
                 Inicio.this.setContentView(R.layout.activity_inicio);
                 Tipoletra();
                 blinkTextView();
-
             }
         }.start();
 
@@ -77,7 +79,7 @@ public class Inicio extends AppCompatActivity {
 
     public void Jogo(View v) {
 
-        Intent myIntent = new Intent(this, jogo.class);
+        Intent myIntent = new Intent(Inicio.this, jogo.class);
 
         startActivity(myIntent);
     }
