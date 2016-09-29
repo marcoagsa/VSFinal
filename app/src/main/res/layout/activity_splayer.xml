@@ -1,10 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/toast_custum"
+android:orientation="vertical"
+    android:background="@android:color/white"
+style="@android:style/Animation.Toast"
+android:foregroundGravity="center_horizontal"
+android:gravity="center_horizontal"
     android:layout_height="wrap_content"
-    tools:context="com.example.marcosa.vs.Inicio">
+    android:layout_width="wrap_content">
 
+
+    <TableRow
+        android:id="@id/Row1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp">
+
+
+        <ImageButton
+            android:id="@+id/SE"
+            android:layout_width="50dp"
+            android:src="@drawable/anterior"
+            android:layout_height="50dp"
+            android:scaleType="fitStart"
+            android:background="@null"
+            android:padding="5dp"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageButton
+            android:id="@+id/SP"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/atomic_robot"
+            android:background="@null"
+            android:scaleType="fitStart" />
+
+
+        <ImageButton
+            android:id="@+id/SD"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/seguinte"
+            android:scaleType="fitStart"
+            android:background="@null"
+            android:padding="5dp"
+            android:layout_gravity="center_vertical"/>
+
+
+    </TableRow>
 
     <TextView
         android:id="@+id/NPlayer"
@@ -14,28 +58,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textStyle="normal|bold"
         android:textColor="@color/colorAccent"
-        android:textAlignment="center" />
-
-
-    <ImageButton
-        android:id="@+id/SE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/anterior"/>
-
-    <ImageButton
-        android:id="@+id/SP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/atomic_robot"
-        android:background="@null" />
-
-
-    <ImageButton
-        android:id="@+id/SD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/seguinte"/>
-
+        android:layout_below="@+id/Row1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="center"
+        android:textSize="24sp" />
 
 </RelativeLayout>
