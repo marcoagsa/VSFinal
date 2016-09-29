@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+
+
 public class Inicio extends AppCompatActivity {
 
 
@@ -28,7 +30,6 @@ public class Inicio extends AppCompatActivity {
                 //set the new Content of your activity
                 Inicio.this.setContentView(R.layout.activity_inicio);
                 Tipoletra();
-                //blinkTextView2();
                 blinkTextView();
 
             }
@@ -37,7 +38,7 @@ public class Inicio extends AppCompatActivity {
 
     }
 
-    public void Tipoletra(){
+    public void Tipoletra() {
 
         Typeface TipoLetra = Typeface.createFromAsset(getAssets(), "Imagica.ttf");
 
@@ -46,22 +47,25 @@ public class Inicio extends AppCompatActivity {
         Play.setTypeface(TipoLetra);
     }
 
-    public void blinkTextView(){
+    public void blinkTextView() {
         final Handler handler = new Handler();
         new Thread(new Runnable() {
             @Override
             public void run() {
                 int timeToBlink = 1000;    //in milissegunds
                 //noinspection EmptyCatchBlock,EmptyCatchBlock,EmptyCatchBlock,EmptyCatchBlock,EmptyCatchBlock
-                try{Thread.sleep(timeToBlink);}catch (Exception e) {}
+                try {
+                    Thread.sleep(timeToBlink);
+                } catch (Exception e) {
+                }
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
                         TextView tvBlink = (TextView) findViewById(R.id.Play);
-                        if(tvBlink .getVisibility() == View.VISIBLE){
-                            tvBlink .setVisibility(View.INVISIBLE);
-                        }else{
-                            tvBlink .setVisibility(View.VISIBLE);
+                        if (tvBlink.getVisibility() == View.VISIBLE) {
+                            tvBlink.setVisibility(View.INVISIBLE);
+                        } else {
+                            tvBlink.setVisibility(View.VISIBLE);
                         }
                         blinkTextView();
                     }
@@ -71,10 +75,11 @@ public class Inicio extends AppCompatActivity {
     }
 
 
-    public void Jogo(View v){
+    public void Jogo(View v) {
 
         Intent myIntent = new Intent(this, jogo.class);
 
         startActivity(myIntent);
     }
+
 }
