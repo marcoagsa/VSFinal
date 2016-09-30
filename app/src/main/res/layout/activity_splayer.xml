@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:id="@+id/toast_custum"
-android:orientation="vertical"
-    android:background="@android:color/white"
-style="@android:style/Animation.Toast"
-android:foregroundGravity="center_horizontal"
-android:gravity="center_horizontal"
+    android:id="@+id/toast_custum"
+    style="@android:style/Animation.Toast"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_width="wrap_content">
+    android:background="@android:color/white"
+    android:foregroundGravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
 
     <TableRow
@@ -21,31 +21,31 @@ android:gravity="center_horizontal"
         <ImageButton
             android:id="@+id/SE"
             android:layout_width="50dp"
-            android:src="@drawable/anterior"
             android:layout_height="50dp"
-            android:scaleType="fitStart"
+            android:layout_gravity="center_vertical"
             android:background="@null"
             android:padding="5dp"
-            android:layout_gravity="center_vertical"/>
+            android:scaleType="fitStart"
+            android:src="@drawable/anterior" />
 
         <ImageButton
             android:id="@+id/SP"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/atomic_robot"
             android:background="@null"
-            android:scaleType="fitStart" />
+            android:scaleType="fitStart"
+            android:src="@drawable/atomic_robot" />
 
 
         <ImageButton
             android:id="@+id/SD"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/seguinte"
-            android:scaleType="fitStart"
+            android:layout_gravity="center_vertical"
             android:background="@null"
             android:padding="5dp"
-            android:layout_gravity="center_vertical"/>
+            android:scaleType="fitStart"
+            android:src="@drawable/seguinte" />
 
 
     </TableRow>
@@ -54,14 +54,14 @@ android:gravity="center_horizontal"
         android:id="@+id/NPlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome do Player"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textStyle="normal|bold"
-        android:textColor="@color/colorAccent"
-        android:layout_below="@+id/Row1"
-        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Row1"
+        android:text="Nome do Player"
         android:textAlignment="center"
-        android:textSize="24sp" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
 
 </RelativeLayout>

@@ -1,16 +1,15 @@
-package com.example.marcosa.vs;
+package com.msandroid.vs;
 
 
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.os.CountDownTimer;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 
 
 public class Inicio extends AppCompatActivity {

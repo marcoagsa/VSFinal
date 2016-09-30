@@ -1,8 +1,9 @@
-package com.example.marcosa.vs;
+package com.msandroid.vs;
 
 import android.animation.ObjectAnimator;
 import android.app.Dialog;
 import android.graphics.Typeface;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -17,21 +18,19 @@ import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.os.Bundle;
+
 import java.util.Random;
 
 
 public class jogo extends AppCompatActivity {
 
 
+    final Handler myhandler = new Handler();
     private ImageView vs, player1, player2, JP1, JP2, JP11, JP22, TM;
     private ProgressBar bar, bar2;
     private ImageButton butao;
     private TextView Coins, Bet, Fight;
     private SeekBar sk1, sk2;
-    final Handler myhandler = new Handler();
-
-
 
     private void Tround(String mensagem) {
 
@@ -52,23 +51,24 @@ public class jogo extends AppCompatActivity {
 
     }
 
-    public void blinkTextView(){
+    public void blinkTextView() {
         final Handler handler = new Handler();
         new Thread(new Runnable() {
             @Override
             public void run() {
                 int timeToBlink = 1000;    //in milissegunds
-                try{
-                    Thread.sleep(timeToBlink);}
-                catch (Exception ignored) {}
+                try {
+                    Thread.sleep(timeToBlink);
+                } catch (Exception ignored) {
+                }
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
                         TextView Fight = (TextView) findViewById(R.id.Fight);
-                        if(Fight .getVisibility() == View.VISIBLE){
-                            Fight .setVisibility(View.INVISIBLE);
-                        }else{
-                            Fight .setVisibility(View.VISIBLE);
+                        if (Fight.getVisibility() == View.VISIBLE) {
+                            Fight.setVisibility(View.INVISIBLE);
+                        } else {
+                            Fight.setVisibility(View.VISIBLE);
                         }
                         blinkTextView();
                     }
@@ -108,7 +108,6 @@ public class jogo extends AppCompatActivity {
     }
 
     private void LoopMoedas() {
-
 
 
         final Random rand = new Random();
@@ -171,11 +170,11 @@ public class jogo extends AppCompatActivity {
                 if (sk1.getProgress() == 0) {
                     JP1.setImageResource(R.drawable.zero_v);
                 } else if (sk1.getProgress() == 1) {
-                   JP1.setImageResource(R.drawable.um_v);
+                    JP1.setImageResource(R.drawable.um_v);
                 } else if (sk1.getProgress() == 2) {
-                   JP1.setImageResource(R.drawable.dois_v);
+                    JP1.setImageResource(R.drawable.dois_v);
                 } else if (sk1.getProgress() == 3) {
-                   JP1.setImageResource(R.drawable.tres_v);
+                    JP1.setImageResource(R.drawable.tres_v);
                 }
             }
         });
@@ -247,12 +246,12 @@ public class jogo extends AppCompatActivity {
         int p2 = rand.nextInt(8);
 
         switch (p2) {
-                case 0:
-                    jogo.this.player2.setImageResource(R.drawable.happy_robot);
-                    Tround("VS");
-                    Tround("Happy Robot");
-                    break;
-                case 1:
+            case 0:
+                jogo.this.player2.setImageResource(R.drawable.happy_robot);
+                Tround("VS");
+                Tround("Happy Robot");
+                break;
+            case 1:
                 jogo.this.player2.setImageResource(R.drawable.girl_android);
                 Tround("VS");
                 Tround("teste");
@@ -487,7 +486,6 @@ public class jogo extends AppCompatActivity {
         }
 
     }
-
 
 
     @Override
