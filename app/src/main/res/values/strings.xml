@@ -4,4 +4,5 @@
     <string name="Play">Play</string>
     <string name="Desc">Description</string>
     <string name="Select">Select Your Player</string>
+    <string name="NomeP">Nome do Jogador</string>
 </resources>

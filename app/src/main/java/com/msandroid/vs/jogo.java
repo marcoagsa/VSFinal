@@ -113,15 +113,21 @@ public class jogo extends AppCompatActivity {
         final Random rand = new Random();
 
         final int[] Pics = {R.drawable.zero_a, R.drawable.um_a, R.drawable.dois_a, R.drawable.tres_a};
-
+        final int[] Pics2 = {R.drawable.zero_v, R.drawable.um_v, R.drawable.dois_v, R.drawable.tres_v, R.drawable.quatro_v, R.drawable.cinco_v, R.drawable.seis_v };
+        final int[] Pics3 = {R.drawable.zero_r, R.drawable.um_r, R.drawable.dois_r, R.drawable.tres_r, R.drawable.quatro_r, R.drawable.cinco_r, R.drawable.seis_r };
 
         myhandler.postDelayed(new Runnable() {
             public void run() {
                 int randomNum = rand.nextInt(4);
                 JP22.setImageResource(Pics[randomNum]);
+                int randomNum2 = rand.nextInt(7);
+                JP11.setImageResource(Pics2[randomNum2]);
+                int randomNum3 = rand.nextInt(7);
+                TM.setImageResource(Pics3[randomNum3]);
                 myhandler.postDelayed(this, 50);
             }
         }, 200);
+
     }
 
     private void SeekBars() {
@@ -168,13 +174,30 @@ public class jogo extends AppCompatActivity {
 
                 sk1.getProgress();
                 if (sk1.getProgress() == 0) {
-                    JP1.setImageResource(R.drawable.zero_v);
+                    JP1.setImageResource(R.drawable.zero_a);
                 } else if (sk1.getProgress() == 1) {
-                    JP1.setImageResource(R.drawable.um_v);
+                    JP1.setImageResource(R.drawable.um_a);
                 } else if (sk1.getProgress() == 2) {
-                    JP1.setImageResource(R.drawable.dois_v);
+                    JP1.setImageResource(R.drawable.dois_a);
                 } else if (sk1.getProgress() == 3) {
-                    JP1.setImageResource(R.drawable.tres_v);
+                    JP1.setImageResource(R.drawable.tres_a);
+                }
+
+                sk2.getProgress();
+                if (sk2.getProgress() == 0) {
+                    JP2.setImageResource(R.drawable.zero_v);
+                } else if (sk2.getProgress() == 1) {
+                    JP2.setImageResource(R.drawable.um_v);
+                } else if (sk2.getProgress() == 2) {
+                    JP2.setImageResource(R.drawable.dois_v);
+                } else if (sk2.getProgress() == 3) {
+                    JP2.setImageResource(R.drawable.tres_v);
+                }else if (sk2.getProgress() == 4) {
+                    JP2.setImageResource(R.drawable.quatro_v);
+                }else if (sk2.getProgress() == 5) {
+                    JP2.setImageResource(R.drawable.cinco_v);
+                }else if (sk2.getProgress() == 6) {
+                    JP2.setImageResource(R.drawable.seis_v);
                 }
             }
         });
@@ -211,22 +234,39 @@ public class jogo extends AppCompatActivity {
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                TM.setImageResource(0);
+
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
-                TM.setImageResource(0);
+
                 sk1.getProgress();
                 if (sk1.getProgress() == 0) {
-                    JP1.setImageResource(R.drawable.zero_v);
+                    JP1.setImageResource(R.drawable.zero_a);
                 } else if (sk1.getProgress() == 1) {
-                    JP1.setImageResource(R.drawable.um_v);
+                    JP1.setImageResource(R.drawable.um_a);
                 } else if (sk1.getProgress() == 2) {
-                    JP1.setImageResource(R.drawable.dois_v);
+                    JP1.setImageResource(R.drawable.dois_a);
                 } else if (sk1.getProgress() == 3) {
-                    JP1.setImageResource(R.drawable.tres_v);
+                    JP1.setImageResource(R.drawable.tres_a);
+                }
+
+                sk2.getProgress();
+                if (sk2.getProgress() == 0) {
+                    JP2.setImageResource(R.drawable.zero_v);
+                } else if (sk2.getProgress() == 1) {
+                    JP2.setImageResource(R.drawable.um_v);
+                } else if (sk2.getProgress() == 2) {
+                    JP2.setImageResource(R.drawable.dois_v);
+                } else if (sk2.getProgress() == 3) {
+                    JP2.setImageResource(R.drawable.tres_v);
+                }else if (sk2.getProgress() == 4) {
+                    JP2.setImageResource(R.drawable.quatro_v);
+                }else if (sk2.getProgress() == 5) {
+                    JP2.setImageResource(R.drawable.cinco_v);
+                }else if (sk2.getProgress() == 6) {
+                    JP2.setImageResource(R.drawable.seis_v);
                 }
             }
 
@@ -323,7 +363,7 @@ public class jogo extends AppCompatActivity {
                     NP.setText("Happy Robot");
                 } else if (i[0] == 1) {
                     SP.setImageResource(R.drawable.girl_android);
-                    NP.setText("Android");
+                    NP.setText("Girl Android");
                 } else if (i[0] == 2) {
                     SP.setImageResource(R.drawable.atomic_robot);
                     NP.setText("Atomic Robot");
@@ -362,7 +402,7 @@ public class jogo extends AppCompatActivity {
                     NP.setText("Happy Robot");
                 } else if (i[0] == 1) {
                     SP.setImageResource(R.drawable.girl_android);
-                    NP.setText("Android");
+                    NP.setText("Girl Android");
                 } else if (i[0] == 2) {
                     SP.setImageResource(R.drawable.atomic_robot);
                     NP.setText("Atomic Robot");
@@ -430,21 +470,48 @@ public class jogo extends AppCompatActivity {
 
         switch (MA) {
             case 0:
-                JP2.setImageResource(R.drawable.zero_a);
+                jogo.this.JP22.setImageResource(R.drawable.zero_a);
                 break;
             case 1:
-                JP2.setImageResource(R.drawable.um_a);
+                jogo.this.JP22.setImageResource(R.drawable.um_a);
                 break;
             case 2:
-                JP2.setImageResource(R.drawable.dois_a);
+                jogo.this.JP22.setImageResource(R.drawable.dois_a);
                 break;
             case 3:
-                JP2.setImageResource(R.drawable.tres_a);
+                jogo.this.JP22.setImageResource(R.drawable.tres_a);
                 break;
         }
 
         int MJ = sk1.getProgress();
         int ABet = MA + Rand.nextInt(4);
+
+        switch (ABet) {
+            case 0:
+                jogo.this.JP11.setImageResource(R.drawable.zero_v);
+                break;
+            case 1:
+                jogo.this.JP11.setImageResource(R.drawable.um_v);
+                break;
+            case 2:
+                jogo.this.JP11.setImageResource(R.drawable.dois_v);
+                break;
+            case 3:
+                jogo.this.JP11.setImageResource(R.drawable.tres_v);
+                break;
+            case 4:
+                jogo.this.JP11.setImageResource(R.drawable.quatro_v);
+                break;
+            case 5:
+                jogo.this.JP11.setImageResource(R.drawable.cinco_v);
+                break;
+            case 6:
+                jogo.this.JP11.setImageResource(R.drawable.seis_v);
+                break;
+        }
+
+
+
         int HBet = sk2.getProgress();
         int totalmoedas = MA + MJ;
 

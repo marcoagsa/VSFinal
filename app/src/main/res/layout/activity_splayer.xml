@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/toast_custum"
     style="@android:style/Animation.Toast"
     android:layout_width="wrap_content"
@@ -9,13 +10,29 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/SelectP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/Select"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:background="@color/colorWhite"
+        android:layout_margin="5dp" />
+
 
     <TableRow
         android:id="@id/Row1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:padding="5dp">
+        android:padding="5dp"
+        android:layout_below="@+id/SelectP">
 
 
         <ImageButton
@@ -26,7 +43,8 @@
             android:background="@null"
             android:padding="5dp"
             android:scaleType="fitStart"
-            android:src="@drawable/anterior" />
+            android:src="@drawable/anterior"
+            android:layout_margin="10dp" />
 
         <ImageButton
             android:id="@+id/SP"
@@ -34,7 +52,8 @@
             android:layout_height="100dp"
             android:background="@null"
             android:scaleType="fitStart"
-            android:src="@drawable/atomic_robot" />
+            android:src="@drawable/atomic_robot"
+            android:layout_margin="10dp" />
 
 
         <ImageButton
@@ -45,7 +64,8 @@
             android:background="@null"
             android:padding="5dp"
             android:scaleType="fitStart"
-            android:src="@drawable/seguinte" />
+            android:src="@drawable/seguinte"
+            android:layout_margin="10dp" />
 
 
     </TableRow>
@@ -57,11 +77,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/Row1"
-        android:text="Nome do Player"
+        android:text="@string/NomeP"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textColor="@color/colorAccent"
+        android:textColor="@android:color/holo_red_dark"
         android:textSize="24sp"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:background="@android:color/background_light"
+        android:layout_margin="5dp" />
 
 </RelativeLayout>
