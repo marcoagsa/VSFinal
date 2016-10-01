@@ -294,7 +294,7 @@ public class jogo extends AppCompatActivity {
             case 1:
                 jogo.this.player2.setImageResource(R.drawable.girl_android);
                 Tround("VS");
-                Tround("teste");
+                Tround("Girl Android");
                 break;
             case 2:
                 jogo.this.player2.setImageResource(R.drawable.atomic_robot);
