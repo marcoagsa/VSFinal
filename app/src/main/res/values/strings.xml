@@ -1,8 +1,24 @@
 <resources>
     <string name="app_name">VS</string>
     <string name="App">VS</string>
+    <string name="Fight">Fight</string>
     <string name="Play">Play</string>
+    <string name="SCoins">Select Your Coins</string>
+    <string name="YBet">Select Your Bet</string>
+    <string name="HR">Happy Robot</string>
+    <string name="GR">Girl Android</string>
+    <string name="AR">Atomic Robot</string>
+    <string name="LR">Little Robot</string>
+    <string name="FR">Flyin Robot</string>
+    <string name="IC">Iron Clad</string>
+    <string name="IR">Insect Robot</string>
+    <string name="SR">Scorpio</string>
     <string name="Desc">Description</string>
     <string name="Select">Select Your Player</string>
     <string name="NomeP">Nome do Jogador</string>
+    <string name="YW">You Win</string>
+    <string name="YL">You Lose</string>
+    <string name="NW">Nobody Won!!!!</string>
+    <string name="GO">Game Over !!!!</string>
+    <string name="BOK">OK</string>
 </resources>
