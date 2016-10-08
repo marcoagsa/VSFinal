@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#050505</color>
     <color name="colorAccent">#2f74bf</color>
     <color name="colorWhite">#ffffff</color>
+    <color name="colorBet">#86da50</color>
+    <color name="colorCoins">#fdd63e</color>
+    <color name="GameOver">#fd3e3e</color>
 </resources>

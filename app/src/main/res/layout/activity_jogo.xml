@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -59,22 +59,29 @@
             android:src="@drawable/zero_v"
             android:layout_width="30dp"
             android:layout_height="30dp" />
+
     </TableRow>
 
-    <TableRow
-        android:id="@+id/Row2"
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/Gif"
         android:layout_below="@+id/linha2"
-        android:background="@drawable/fundo1"
         android:layout_width="match_parent"
+        android:layout_height="250dp"/>
+
+    <TableRow
+        android:id="@+id/Row7"
+        android:layout_below="@+id/linha2"
+        android:layout_width="wrap_content"
         android:layout_height="250dp">
 
         <ImageView
             android:id="@+id/Player1"
-            android:scaleType="fitEnd"
-            android:elevation="0dp"
-            android:layout_width="wrap_content"
             android:layout_weight="1"
-            android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:scaleType="fitStart"
+            android:layout_gravity="bottom" />
 
         <ImageView
             android:id="@+id/TotalMoedas"
@@ -86,30 +93,71 @@
 
         <ImageView
             android:id="@+id/Player2"
-            android:layout_width="wrap_content"
             android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
             android:scaleType="fitEnd"
-            android:layout_height="wrap_content"
-            android:elevation="10dp" />
+            android:layout_gravity="bottom" />
 
     </TableRow>
+
+
+    <TableRow
+        android:id="@+id/Row2"
+        android:layout_below="@+id/linha2"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp">
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/HumanAtaques"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:elevation="0dp"
+            android:layout_gravity="bottom|start" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/RoboAtaques"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:cropToPadding="false"
+            android:adjustViewBounds="false"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="20dp" />
+
+    </TableRow>
+
 
 
     <TableRow
         android:id="@+id/Row3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Row2"
+        android:layout_below="@+id/Gif"
         android:padding="5dp">
 
         <TextView
             android:id="@+id/Coins"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Coins"
-            android:textColor="#FFFDD63E"
-            android:textStyle="bold"
-            android:elevation="11dp" />
+            android:elevation="11dp"
+            android:text="@string/SCoins"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="18sp"
+            android:textColor="@color/colorCoins"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/Moedas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="11dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="18sp"
+            android:textColor="@color/colorCoins"
+            android:textStyle="normal|bold" />
 
     </TableRow>
 
@@ -145,9 +193,22 @@
             android:id="@+id/Bet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bet"
-            android:textColor="#FFBFECA1"
-            android:textStyle="bold" />
+            android:text="@string/YBet"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="18sp"
+            android:textColor="@color/colorBet"
+            android:textStyle="normal|bold"
+            android:textAlignment="viewStart"/>
+
+        <TextView
+            android:id="@+id/MoedasBet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="18sp"
+            android:textColor="@color/colorBet"
+            android:textStyle="normal|bold"
+            android:textAlignment="viewStart" />
 
     </TableRow>
 
@@ -214,7 +275,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp"
         android:fontFamily="sans-serif"
-        android:text="Fight"
+        android:text="@string/Fight"
         android:textColor="@color/colorWhite"
         android:textSize="18sp"
         android:textStyle="normal|bold"
@@ -225,12 +286,10 @@
         android:adjustViewBounds="false"
         android:cropToPadding="false"
         android:src="@drawable/resize"
-        android:layout_width="100dp"
-        android:layout_height="150dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:scaleType="centerInside"
-        android:layout_above="@+id/Row2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="37dp"></ImageView>
+        android:layout_centerHorizontal="true"></ImageView>
 
 
 </RelativeLayout>

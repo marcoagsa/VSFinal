@@ -3,27 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/toast_custum"
     style="@android:style/Animation.Toast"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@android:color/white"
     android:foregroundGravity="center_horizontal"
     android:gravity="center_horizontal"
     android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/SelectP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:text="@string/Select"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp"
-        android:textStyle="normal|bold"
-        android:background="@color/colorWhite"
-        android:layout_margin="5dp" />
 
 
     <TableRow
@@ -44,7 +28,8 @@
             android:padding="5dp"
             android:scaleType="fitStart"
             android:src="@drawable/anterior"
-            android:layout_margin="10dp" />
+            android:layout_margin="10dp"
+            android:elevation="24dp" />
 
         <ImageButton
             android:id="@+id/SP"
@@ -65,7 +50,8 @@
             android:padding="5dp"
             android:scaleType="fitStart"
             android:src="@drawable/seguinte"
-            android:layout_margin="10dp" />
+            android:layout_margin="10dp"
+            android:elevation="24dp" />
 
 
     </TableRow>
@@ -74,16 +60,32 @@
         android:id="@+id/NPlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/Row1"
         android:text="@string/NomeP"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:fontFamily="sans-serif-condensed"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="24sp"
         android:textStyle="normal|bold"
-        android:background="@android:color/background_light"
-        android:layout_margin="5dp" />
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/Row1"
+        android:layout_centerHorizontal="true"
+        android:elevation="11dp" />
+
+    <TextView
+        android:id="@+id/SelectP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Select"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="11dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="24sp"
+        android:textColor="@color/colorCoins"
+        android:textStyle="normal|bold"
+        android:textAlignment="center" />
 
 </RelativeLayout>
