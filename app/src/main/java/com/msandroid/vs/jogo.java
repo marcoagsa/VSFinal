@@ -35,7 +35,7 @@ public class jogo extends AppCompatActivity {
     private Button butaoOK;
     private TextView Coins, Bet, Fight, MoedasBet, Moedas, TT,TT2;
     private SeekBar sk1, sk2;
-    private GifImageView Gif, HumanAtaques, RoboAtaques2;
+    private GifImageView Gif, Ataques;
     private int tentativas = 0;
 
     private void Tround(int mensagem) {
@@ -143,8 +143,7 @@ public class jogo extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
                 TM.setImageResource(0);
-                HumanAtaques.setImageResource(0);
-                RoboAtaques2.setImageResource(0);
+                Ataques.setImageResource(0);
 
                 Moedas.setText(" = " + sk1.getProgress());
 
@@ -161,8 +160,7 @@ public class jogo extends AppCompatActivity {
             public void onStartTrackingTouch(SeekBar seekBar) {
 
                 TM.setImageResource(0);
-                HumanAtaques.setImageResource(0);
-                RoboAtaques2.setImageResource(0);
+                Ataques.setImageResource(0);
 
                 Moedas.setText(" = " + sk1.getProgress());
 
@@ -177,8 +175,7 @@ public class jogo extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {
 
                 TM.setImageResource(0);
-                HumanAtaques.setImageResource(0);
-                RoboAtaques2.setImageResource(0);
+                Ataques.setImageResource(0);
 
                 sk1.getProgress();
                 if (sk1.getProgress() == 0) {
@@ -215,8 +212,7 @@ public class jogo extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
                 TM.setImageResource(0);
-                HumanAtaques.setImageResource(0);
-                RoboAtaques2.setImageResource(0);
+                Ataques.setImageResource(0);
                 butao.setEnabled(false);
                 Fight.setVisibility(View.INVISIBLE);
 
@@ -281,8 +277,8 @@ public class jogo extends AppCompatActivity {
             }
 
         });
-    }
 
+    }
 
     private ImageView SelectPlayer2(ImageView player2) {
 
@@ -515,25 +511,25 @@ public class jogo extends AppCompatActivity {
 
         switch (totalmoedas) {
             case 0:
-                jogo.this.TM.setImageResource(R.drawable.zero_r);
+                jogo.this.TM.setImageResource(R.drawable.zero_v);
                 break;
             case 1:
-                jogo.this.TM.setImageResource(R.drawable.um_r);
+                jogo.this.TM.setImageResource(R.drawable.um_v);
                 break;
             case 2:
-                jogo.this.TM.setImageResource(R.drawable.dois_r);
+                jogo.this.TM.setImageResource(R.drawable.dois_v);
                 break;
             case 3:
-                jogo.this.TM.setImageResource(R.drawable.tres_r);
+                jogo.this.TM.setImageResource(R.drawable.tres_v);
                 break;
             case 4:
-                jogo.this.TM.setImageResource(R.drawable.quatro_r);
+                jogo.this.TM.setImageResource(R.drawable.quatro_v);
                 break;
             case 5:
-                jogo.this.TM.setImageResource(R.drawable.cinco_r);
+                jogo.this.TM.setImageResource(R.drawable.cinco_v);
                 break;
             case 6:
-                jogo.this.TM.setImageResource(R.drawable.seis_r);
+                jogo.this.TM.setImageResource(R.drawable.seis_v);
                 break;
         }
 
@@ -573,27 +569,29 @@ public class jogo extends AppCompatActivity {
         }
 
 
-        int[] Ataques  = {R.drawable.ataquechama, R.drawable.ataqueexplosao, R.drawable.tornado,
-                R.drawable.torvoada2, R.drawable.fogoexplosao};
+        int[] VAtaques  = { R.drawable.ataqueexplosao, R.drawable.tornado,
+                R.drawable.torvoada2};
 
-        int randomNum = Rand.nextInt(5);
+        int[] VAtaques2 = {R.drawable.fogoexplosao, R.drawable.ataquechama};
 
+        int randomNum = Rand.nextInt(3);
+        int randomNum2 = Rand.nextInt(2);
 
         Animation anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move);
-        Animation anim2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_2);
+        Animation anim2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_down);
 
 
         if (HBet == totalmoedas) {
             Tround(R.string.YW);
             Bar2();
-            RoboAtaques2.setImageResource(Ataques[randomNum]);
-            RoboAtaques2.setAnimation(anim);
+            Ataques.setImageResource(VAtaques[randomNum]);
+            Ataques.setAnimation(anim);
             tentativas++;
         } else if (ABet == totalmoedas) {
             Tround(R.string.YL);
             Bar();
-            HumanAtaques.setImageResource(Ataques[randomNum]);
-            HumanAtaques.setAnimation(anim2);
+            Ataques.setImageResource(VAtaques2[randomNum2]);
+            Ataques.setAnimation(anim2);
             tentativas++;
         } else{
             Tround(R.string.NW);
@@ -601,9 +599,9 @@ public class jogo extends AppCompatActivity {
         }
 
 
-        if (bar.getProgress() > 100){
+        if (bar.getProgress() == bar.getMax()-10){
             Final();
-        }else if (bar2.getProgress() > 100) {
+        }else if (bar2.getProgress() == bar.getMax()-10) {
             Final();
         }
 
@@ -631,8 +629,8 @@ public class jogo extends AppCompatActivity {
         bar = (ProgressBar) findViewById(R.id.bar);
         bar2 = (ProgressBar) findViewById(R.id.bar2);
         Gif = (GifImageView) findViewById(R.id.Gif);
-        HumanAtaques = (GifImageView) findViewById(R.id.HumanAtaques);
-        RoboAtaques2 = (GifImageView) findViewById(R.id.RoboAtaques);
+        Ataques = (GifImageView) findViewById(R.id.Ataques);
+
 
         Typeface TipoLetra = Typeface.createFromAsset(getAssets(), "Imagica.ttf");
         Fight.setTypeface(TipoLetra);
