@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -13,15 +14,76 @@
         android:layout_marginBottom="64dp"
         android:id="@+id/progressBar" />
 
+
     <ImageView
         android:id="@+id/Logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:background="@android:color/transparent"
         android:padding="20dp"
         android:src="@drawable/resize"
-        android:layout_alignParentTop="true"
+        android:layout_marginBottom="71dp"
+        android:layout_above="@+id/progressBar"
         android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/ironclad_robot"
+        android:id="@+id/IRR"
+        android:layout_above="@+id/GR"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="33dp" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/insect_robot"
+        android:id="@+id/IR"
+        android:layout_below="@+id/AR"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/girl_android"
+        android:id="@+id/GR"
+        android:layout_alignBottom="@+id/Logo"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/happy_robot"
+        android:id="@+id/HR"
+        android:layout_alignBottom="@+id/Logo"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/flying_robot"
+        android:id="@+id/FR"
+        android:layout_above="@+id/IRR"
+        android:layout_toStartOf="@+id/progressBar" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/atomic_robot"
+        android:id="@+id/AR"
+        android:layout_alignTop="@+id/FR"
+        android:layout_toEndOf="@+id/progressBar" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/scorpio_robot"
+        android:id="@+id/SR"
+        android:layout_marginEnd="14dp"
+        android:layout_alignBottom="@+id/Logo"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

@@ -26,8 +26,8 @@ public class Inicio extends AppCompatActivity {
 
 
     private Button butao;
-    private ImageView Logo;
-    private Animation anim, anim2;
+    private ImageView Logo, HR, GR, AR, FR, IR, IRR, SR;
+    private Animation anim, anim2, anim3, anim4, anim5, anim6, anim7, anim8, anim9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,15 +36,38 @@ public class Inicio extends AppCompatActivity {
 
 
         Logo = (ImageView) findViewById(R.id.Logo);
-        anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.conjunto_anim);
+        HR = (ImageView) findViewById(R.id.HR);
+        GR = (ImageView) findViewById(R.id.GR);
+        AR = (ImageView) findViewById(R.id.AR);
+        FR = (ImageView) findViewById(R.id.FR);
+        IR = (ImageView) findViewById(R.id.IR);
+        IRR = (ImageView) findViewById(R.id.IRR);
+        SR = (ImageView) findViewById(R.id.SR);
+
+        anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_in);
         anim2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+        anim3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
+        anim4 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
+        anim5 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_down);
+        anim6 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
+        anim7 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move);
+        anim8 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_2);
+        anim9 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.seq_anim);
 
         Logo.setAnimation(anim);
+        HR.setAnimation(anim3);
+        GR.setAnimation(anim4);
+        AR.setAnimation(anim5);
+        FR.setAnimation(anim6);
+        IRR.setAnimation(anim7);
+        IR.setAnimation(anim8);
+        SR.setAnimation(anim9);
+
 
 
         //display the logo during 5 secondes,
 
-        new CountDownTimer(3000, 1000) {
+        new CountDownTimer(7000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
             }
