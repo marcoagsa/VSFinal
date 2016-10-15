@@ -125,7 +125,6 @@
             android:id="@+id/Coins"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="11dp"
             android:text="@string/SCoins"
             android:fontFamily="sans-serif-condensed"
             android:textSize="18sp"
@@ -136,11 +135,11 @@
             android:id="@+id/Moedas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="11dp"
             android:fontFamily="sans-serif-condensed"
             android:textSize="18sp"
             android:textColor="@color/colorCoins"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal|bold"
+            android:textAlignment="viewStart" />
 
     </TableRow>
 
@@ -181,7 +180,8 @@
             android:textSize="18sp"
             android:textColor="@color/colorBet"
             android:textStyle="normal|bold"
-            android:textAlignment="viewStart"/>
+            android:textAlignment="viewStart"
+            android:textAllCaps="false" />
 
         <TextView
             android:id="@+id/MoedasBet"

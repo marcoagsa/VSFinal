@@ -36,7 +36,7 @@ public class jogo extends AppCompatActivity {
     private TextView Coins, Bet, Fight, MoedasBet, Moedas, TT,TT2;
     private SeekBar sk1, sk2;
     private GifImageView Gif, Ataques;
-    private int tentativas = 0;
+    private int tentativas = 0, VH = 0, VA = 0;
 
     private void Tround(int mensagem) {
 
@@ -462,9 +462,10 @@ public class jogo extends AppCompatActivity {
         Dialog Dfinal = new Dialog(jogo.this);
         Dfinal.setTitle(R.string.GO);
         Dfinal.setContentView(R.layout.custom_toast2);
-        TT = (TextView)Dfinal.findViewById(R.id.texttoast);
-        TT.setTextColor(getResources().getColor(R.color.GameOver));
+        TT = (TextView)Dfinal.findViewById(R.id.GameOver);
+        TT2 = (TextView)Dfinal.findViewById(R.id.Tentativas);
         TT.setText(R.string.GO);
+        TT2.setText(R.string.TT2);
         butaoOK = (Button) Dfinal.findViewById(R.id.OK);
         butaoOK.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -577,8 +578,10 @@ public class jogo extends AppCompatActivity {
         int randomNum = Rand.nextInt(3);
         int randomNum2 = Rand.nextInt(2);
 
-        Animation anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move);
+        Animation anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_2);
         Animation anim2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_down);
+
+
 
 
         if (HBet == totalmoedas) {
@@ -587,26 +590,27 @@ public class jogo extends AppCompatActivity {
             Ataques.setImageResource(VAtaques[randomNum]);
             Ataques.setAnimation(anim);
             tentativas++;
+            VH++;
         } else if (ABet == totalmoedas) {
             Tround(R.string.YL);
             Bar();
             Ataques.setImageResource(VAtaques2[randomNum2]);
             Ataques.setAnimation(anim2);
             tentativas++;
+            VA++;
         } else{
             Tround(R.string.NW);
             tentativas++;
         }
 
+        if (VA == 3 || VH == 3){
+            Final();
 
-        if (bar.getProgress() == bar.getMax()-10){
-            Final();
-        }else if (bar2.getProgress() == bar.getMax()-10) {
-            Final();
         }
+        Log.d("MylogVH", String.valueOf(VH));
+        Log.d("MylogVA", String.valueOf(VA));
 
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

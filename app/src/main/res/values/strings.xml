@@ -20,5 +20,8 @@
     <string name="YL">You Lose</string>
     <string name="NW">Nobody Won!!!!</string>
     <string name="GO">Game Over !!!!</string>
+    <string name="TT2">You Need  </string>
+    <string name="LOSE"> To Lose !!! </string>
+    <string name="WIN"> You Win !!! </string>
     <string name="BOK">OK</string>
 </resources>
