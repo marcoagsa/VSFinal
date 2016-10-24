@@ -22,6 +22,8 @@
     <string name="GO">Game Over !!!!</string>
     <string name="TT2">You Need  </string>
     <string name="LOSE"> To Lose !!! </string>
+    <string name="Att">attempts</string>
+    <string name="ToWin"> To Win !!! </string>
     <string name="WIN"> You Win !!! </string>
     <string name="BOK">OK</string>
 </resources>

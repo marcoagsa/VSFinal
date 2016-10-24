@@ -3,6 +3,7 @@ package com.msandroid.vs;
 import android.animation.ObjectAnimator;
 import android.app.Dialog;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -29,14 +30,199 @@ public class jogo extends AppCompatActivity {
 
 
     final Handler myhandler = new Handler();
-    private ImageView vs, player1, player2, JP1, JP2, JP11, JP22, TM;
+
+    private ImageView player1, player2, JP1, JP2, JP11, JP22, TM, Jogador;
+    private TextView Coins, Bet, Fight, MoedasBet, Moedas, TT, TT2, TV, SF;
+    private int tentativas = 0, VH = 0, VA = 0, StatusFinal;
     private ProgressBar bar, bar2;
     private ImageButton butao;
     private Button butaoOK;
-    private TextView Coins, Bet, Fight, MoedasBet, Moedas, TT,TT2;
+    private Drawable wtf;
     private SeekBar sk1, sk2;
     private GifImageView Gif, Ataques;
-    private int tentativas = 0, VH = 0, VA = 0;
+
+
+    private ImageView SelectPlayer2(ImageView player2) {
+
+        Random rand = new Random();
+
+        int[] Fundo = {R.drawable.arenafogo, R.drawable.arenalouca, R.drawable.arenatailandia,
+                R.drawable.arenaagua, R.drawable.arenabar, R.drawable.arenacampo,
+                R.drawable.arenadeserto, R.drawable.arenajapao};
+
+        int randomNum = rand.nextInt( 8 );
+        Gif.setBackgroundResource( Fundo[randomNum] );
+
+        int p2 = rand.nextInt( 8 );
+
+        switch (p2) {
+            case 0:
+                jogo.this.player2.setImageResource( R.drawable.happy_robot );
+                Tround( R.string.app_name );
+                Tround( R.string.HR );
+                break;
+            case 1:
+                jogo.this.player2.setImageResource( R.drawable.girl_android );
+                Tround( R.string.app_name );
+                Tround( R.string.GR );
+                break;
+            case 2:
+                jogo.this.player2.setImageResource( R.drawable.atomic_robot );
+                Tround( R.string.app_name );
+                Tround( R.string.AR );
+                break;
+            case 3:
+                jogo.this.player2.setImageResource( R.drawable.little_robot );
+                Tround( R.string.app_name );
+                Tround( R.string.LR );
+                break;
+            case 4:
+                jogo.this.player2.setImageResource( R.drawable.flying_robot );
+                Tround( R.string.app_name );
+                Tround( R.string.FR );
+                break;
+            case 5:
+                jogo.this.player2.setImageResource( R.drawable.ironclad_robot );
+                Tround( R.string.app_name );
+                Tround( R.string.IC );
+                break;
+            case 6:
+                jogo.this.player2.setImageResource( R.drawable.insect_robot );
+                Tround( R.string.app_name );
+                Tround( R.string.IR );
+                break;
+            case 7:
+                jogo.this.player2.setImageResource( R.drawable.scorpio_robot );
+                Tround( R.string.app_name );
+                Tround( R.string.SR );
+                break;
+        }
+        return player2;
+
+    }
+
+    private void Splayer(final ImageView player1) {
+
+
+        final Dialog EscolheJogador = new Dialog( this );
+        EscolheJogador.setTitle( R.string.Select );
+        EscolheJogador.setContentView( R.layout.activity_splayer );
+        EscolheJogador.setCancelable( false );
+        EscolheJogador.setCanceledOnTouchOutside( false );
+        EscolheJogador.show();
+
+        Typeface TipoLetra = Typeface.createFromAsset( getAssets(), "Imagica.ttf" );
+
+        ImageButton SE = (ImageButton) EscolheJogador.findViewById( R.id.SE );
+        ImageButton SD = (ImageButton) EscolheJogador.findViewById( R.id.SD );
+        final TextView NP = (TextView) EscolheJogador.findViewById( R.id.NPlayer );
+        final TextView SelectP = (TextView) EscolheJogador.findViewById( R.id.SelectP );
+        final ImageButton SP = (ImageButton) EscolheJogador.findViewById( R.id.SP );
+
+        NP.setTypeface( TipoLetra );
+        SelectP.setTypeface( TipoLetra );
+
+
+        SP.setImageResource( R.drawable.happy_robot );
+        NP.setText( R.string.HR );
+
+
+        final int[] i = {0};
+
+
+        SE.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                i[0]--;
+
+                if (i[0] == 0) {
+                    SP.setImageResource( R.drawable.happy_robot );
+                    NP.setText( R.string.HR );
+                } else if (i[0] == 1) {
+                    SP.setImageResource( R.drawable.girl_android );
+                    NP.setText( R.string.GR );
+                } else if (i[0] == 2) {
+                    SP.setImageResource( R.drawable.atomic_robot );
+                    NP.setText( R.string.AR );
+                } else if (i[0] == 3) {
+                    SP.setImageResource( R.drawable.little_robot );
+                    NP.setText( R.string.LR );
+                } else if (i[0] == 4) {
+                    SP.setImageResource( R.drawable.flying_robot );
+                    NP.setText( R.string.FR );
+                } else if (i[0] == 5) {
+                    SP.setImageResource( R.drawable.ironclad_robot );
+                    NP.setText( R.string.IC );
+                } else if (i[0] == 6) {
+                    SP.setImageResource( R.drawable.insect_robot );
+                    NP.setText( R.string.IR );
+                } else if (i[0] == 7 || i[0] < 0) {
+                    SP.setImageResource( R.drawable.scorpio_robot );
+                    NP.setText( R.string.SR );
+                    i[0] = 7;
+                } else {
+                    i[0] = 10;
+                }
+
+                Log.d( "Mylog", String.valueOf( i[0] ) );
+            }
+        } );
+
+        SD.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                i[0]++;
+
+                if (i[0] == 0 || i[0] == 8) {
+                    SP.setImageResource( R.drawable.happy_robot );
+                    NP.setText( R.string.HR );
+                    i[0] = 1;
+                } else if (i[0] == 1) {
+                    SP.setImageResource( R.drawable.girl_android );
+                    NP.setText( R.string.GR );
+                } else if (i[0] == 2) {
+                    SP.setImageResource( R.drawable.atomic_robot );
+                    NP.setText( R.string.AR );
+                } else if (i[0] == 3) {
+                    SP.setImageResource( R.drawable.little_robot );
+                    NP.setText( R.string.LR );
+                } else if (i[0] == 4) {
+                    SP.setImageResource( R.drawable.flying_robot );
+                    NP.setText( R.string.FR );
+                } else if (i[0] == 5) {
+                    SP.setImageResource( R.drawable.ironclad_robot );
+                    NP.setText( R.string.IR );
+                } else if (i[0] == 6) {
+                    SP.setImageResource( R.drawable.insect_robot );
+                    NP.setText( R.string.IR );
+                } else if (i[0] == 7) {
+                    SP.setImageResource( R.drawable.scorpio_robot );
+                    NP.setText( R.string.SR );
+                    i[0] = -1;
+                } else {
+                    i[0] = -11;
+                }
+                Log.d( "Mylog", String.valueOf( i[0] ) );
+            }
+        } );
+
+
+        SP.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                jogo.this.player1.setImageDrawable( SP.getDrawable() );
+                wtf = SP.getDrawable();
+                jogo.this.Tround2( (String) NP.getText() );
+                SelectPlayer2( player2 );
+                EscolheJogador.cancel();
+                LoopMoedas();
+            }
+        } );
+    }
+
+
 
     private void Tround(int mensagem) {
 
@@ -280,203 +466,6 @@ public class jogo extends AppCompatActivity {
 
     }
 
-    private ImageView SelectPlayer2(ImageView player2) {
-
-        Random rand = new Random();
-
-        int[] Fundo  = {R.drawable.arenafogo, R.drawable.arenalouca, R.drawable.arenatailandia,
-                        R.drawable.arenaagua, R.drawable.arenabar, R.drawable.arenacampo,
-                        R.drawable.arenadeserto, R.drawable.arenajapao};
-
-        int randomNum = rand.nextInt(8);
-        Gif.setBackgroundResource(Fundo[randomNum]);
-
-        int p2 = rand.nextInt(8);
-
-        switch (p2) {
-            case 0:
-                jogo.this.player2.setImageResource(R.drawable.happy_robot);
-                Tround(R.string.app_name);
-                Tround(R.string.HR);
-                break;
-            case 1:
-                jogo.this.player2.setImageResource(R.drawable.girl_android);
-                Tround(R.string.app_name);
-                Tround(R.string.GR);
-                break;
-            case 2:
-                jogo.this.player2.setImageResource(R.drawable.atomic_robot);
-                Tround(R.string.app_name);
-                Tround(R.string.AR);
-                break;
-            case 3:
-                jogo.this.player2.setImageResource(R.drawable.little_robot);
-                Tround(R.string.app_name);
-                Tround(R.string.LR);
-                break;
-            case 4:
-                jogo.this.player2.setImageResource(R.drawable.flying_robot);
-                Tround(R.string.app_name);
-                Tround(R.string.FR);
-                break;
-            case 5:
-                jogo.this.player2.setImageResource(R.drawable.ironclad_robot);
-                Tround(R.string.app_name);
-                Tround(R.string.IC);
-                break;
-            case 6:
-                jogo.this.player2.setImageResource(R.drawable.insect_robot);
-                Tround(R.string.app_name);
-                Tround(R.string.IR);
-                break;
-            case 7:
-                jogo.this.player2.setImageResource(R.drawable.scorpio_robot);
-                Tround(R.string.app_name);
-                Tround(R.string.SR);
-                break;
-        }
-        return player2;
-
-    }
-
-    private void Splayer(final ImageView player1) {
-
-
-        final Dialog teste = new Dialog(this);
-        teste.setTitle(R.string.Select);
-        teste.setContentView(R.layout.activity_splayer);
-        teste.show();
-
-        Typeface TipoLetra = Typeface.createFromAsset(getAssets(), "Imagica.ttf");
-
-        ImageButton SE = (ImageButton) teste.findViewById(R.id.SE);
-        ImageButton SD = (ImageButton) teste.findViewById(R.id.SD);
-        final TextView NP = (TextView) teste.findViewById(R.id.NPlayer);
-        final TextView SelectP = (TextView) teste.findViewById(R.id.SelectP);
-        final ImageButton SP = (ImageButton) teste.findViewById(R.id.SP);
-
-        NP.setTypeface(TipoLetra);
-        SelectP.setTypeface(TipoLetra);
-
-
-        SP.setImageResource(R.drawable.happy_robot);
-        NP.setText(R.string.HR);
-
-
-        final int[] i = {0};
-
-
-        SE.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                i[0]--;
-
-                if (i[0] == 0) {
-                    SP.setImageResource(R.drawable.happy_robot);
-                    NP.setText(R.string.HR);
-                } else if (i[0] == 1) {
-                    SP.setImageResource(R.drawable.girl_android);
-                    NP.setText(R.string.GR);
-                } else if (i[0] == 2) {
-                    SP.setImageResource(R.drawable.atomic_robot);
-                    NP.setText(R.string.AR);
-                } else if (i[0] == 3) {
-                    SP.setImageResource(R.drawable.little_robot);
-                    NP.setText(R.string.LR);
-                } else if (i[0] == 4) {
-                    SP.setImageResource(R.drawable.flying_robot);
-                    NP.setText(R.string.FR);
-                } else if (i[0] == 5) {
-                    SP.setImageResource(R.drawable.ironclad_robot);
-                    NP.setText(R.string.IC);
-                } else if (i[0] == 6) {
-                    SP.setImageResource(R.drawable.insect_robot);
-                    NP.setText(R.string.IR);
-                } else if (i[0] == 7 || i[0] < 0) {
-                    SP.setImageResource(R.drawable.scorpio_robot);
-                    NP.setText(R.string.SR);
-                    i[0] = 7;
-                } else {
-                    i[0] = 10;
-                }
-
-                Log.d("Mylog", String.valueOf(i[0]));
-            }
-        });
-
-        SD.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                i[0]++;
-
-                if (i[0] == 0 || i[0] == 8) {
-                    SP.setImageResource(R.drawable.happy_robot);
-                    NP.setText(R.string.HR);
-                    i[0]=1;
-                } else if (i[0] == 1) {
-                    SP.setImageResource(R.drawable.girl_android);
-                    NP.setText(R.string.GR);
-                } else if (i[0] == 2) {
-                    SP.setImageResource(R.drawable.atomic_robot);
-                    NP.setText(R.string.AR);
-                } else if (i[0] == 3) {
-                    SP.setImageResource(R.drawable.little_robot);
-                    NP.setText(R.string.LR);
-                } else if (i[0] == 4) {
-                    SP.setImageResource(R.drawable.flying_robot);
-                    NP.setText(R.string.FR);
-                } else if (i[0] == 5) {
-                    SP.setImageResource(R.drawable.ironclad_robot);
-                    NP.setText(R.string.IR);
-                } else if (i[0] == 6) {
-                    SP.setImageResource(R.drawable.insect_robot);
-                    NP.setText(R.string.IR);
-                } else if (i[0] == 7) {
-                    SP.setImageResource(R.drawable.scorpio_robot);
-                    NP.setText(R.string.SR);
-                    i[0] = -1;
-                } else {
-                    i[0] = -11;
-                }
-                Log.d("Mylog", String.valueOf(i[0]));
-            }
-        });
-
-
-        SP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                jogo.this.player1.setImageDrawable(SP.getDrawable());
-                jogo.this.Tround2((String)NP.getText());
-                SelectPlayer2(player2);
-                teste.cancel();
-                LoopMoedas();
-            }
-        });
-    }
-
-    private void Final() {
-
-        Dialog Dfinal = new Dialog(jogo.this);
-        Dfinal.setTitle(R.string.GO);
-        Dfinal.setContentView(R.layout.custom_toast2);
-        TT = (TextView)Dfinal.findViewById(R.id.GameOver);
-        TT2 = (TextView)Dfinal.findViewById(R.id.Tentativas);
-        TT.setText(R.string.GO);
-        TT2.setText(R.string.TT2);
-        butaoOK = (Button) Dfinal.findViewById(R.id.OK);
-        butaoOK.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-        Dfinal.show();
-
-
-    }
 
     private void Verifica() {
 
@@ -603,13 +592,43 @@ public class jogo extends AppCompatActivity {
             tentativas++;
         }
 
-        if (VA == 3 || VH == 3){
+        if (VA == 3) {
+            StatusFinal = (R.string.LOSE);
             Final();
-
+        } else if (VH == 3) {
+            StatusFinal = (R.string.ToWin);
+            Final();
         }
-        Log.d("MylogVH", String.valueOf(VH));
-        Log.d("MylogVA", String.valueOf(VA));
+    }
 
+    private void Final() {
+
+        String Att = getString( R.string.Att );
+
+        Dialog Dfinal = new Dialog( jogo.this );
+        Dfinal.setTitle( R.string.GO );
+        Dfinal.setContentView( R.layout.custom_toast2 );
+        Dfinal.setCancelable( false );
+        Dfinal.setCanceledOnTouchOutside( false );
+        Jogador = (ImageView) Dfinal.findViewById( R.id.Jogador );
+        TT = (TextView) Dfinal.findViewById( R.id.GameOver );
+        TT2 = (TextView) Dfinal.findViewById( R.id.TT2 );
+        TV = (TextView) Dfinal.findViewById( R.id.TV );
+        SF = (TextView) Dfinal.findViewById( R.id.SF );
+        TT.setText( R.string.GO );
+        TT2.setText( R.string.TT2 );
+
+        TV.setText( String.valueOf( tentativas ) + " " + Att );
+        SF.setText( StatusFinal );
+        Jogador.setImageDrawable( wtf );
+        butaoOK = (Button) Dfinal.findViewById( R.id.OK );
+        butaoOK.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        } );
+        Dfinal.show();
     }
 
     @Override

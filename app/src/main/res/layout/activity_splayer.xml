@@ -14,9 +14,9 @@
         android:id="@id/Row1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/SelectP"
         android:layout_centerHorizontal="true"
-        android:padding="5dp"
-        android:layout_below="@+id/SelectP">
+        android:padding="5dp">
 
 
         <ImageButton
@@ -24,21 +24,23 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:accessibilityLiveRegion="assertive"
             android:background="@null"
+            android:contentDescription="SE"
             android:padding="5dp"
             android:scaleType="fitStart"
-            android:src="@drawable/anterior"
-            android:layout_margin="10dp"
-            android:elevation="24dp" />
+            android:src="@drawable/anterior" />
 
         <ImageButton
             android:id="@+id/SP"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_margin="10dp"
             android:background="@null"
+            android:contentDescription="SP"
             android:scaleType="fitStart"
-            android:src="@drawable/atomic_robot"
-            android:layout_margin="10dp" />
+            android:src="@drawable/atomic_robot" />
 
 
         <ImageButton
@@ -46,12 +48,12 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
             android:background="@null"
+            android:contentDescription="SD"
             android:padding="5dp"
             android:scaleType="fitStart"
-            android:src="@drawable/seguinte"
-            android:layout_margin="10dp"
-            android:elevation="24dp" />
+            android:src="@drawable/seguinte" />
 
 
     </TableRow>
@@ -60,32 +62,31 @@
         android:id="@+id/NPlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/NomeP"
-        android:fontFamily="sans-serif-condensed"
-        android:textColor="@android:color/holo_red_dark"
-        android:textStyle="normal|bold"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:layout_below="@+id/Row1"
         android:layout_centerHorizontal="true"
-        android:elevation="11dp" />
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/NomeP"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
 
     <TextView
         android:id="@+id/SelectP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Select"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="11dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="24sp"
+        android:text="@string/Select"
+        android:textAlignment="center"
         android:textColor="@color/colorCoins"
-        android:textStyle="normal|bold"
-        android:textAlignment="center" />
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
 
 </RelativeLayout>
