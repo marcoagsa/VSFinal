@@ -16,14 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
-import com.google.android.gms.common.api.GoogleApiClient;
-
-
 public class Inicio extends AppCompatActivity {
-
 
     private Button butao;
     private ImageView Logo, HR, GR, AR, FR, IR, IRR, SR;
@@ -35,14 +28,14 @@ public class Inicio extends AppCompatActivity {
         setContentView(R.layout.imginicio);
 
 
-        Logo = (ImageView) findViewById(R.id.Logo);
-        HR = (ImageView) findViewById(R.id.HR);
-        GR = (ImageView) findViewById(R.id.GR);
-        AR = (ImageView) findViewById(R.id.AR);
-        FR = (ImageView) findViewById(R.id.FR);
-        IR = (ImageView) findViewById(R.id.IR);
-        IRR = (ImageView) findViewById(R.id.IRR);
-        SR = (ImageView) findViewById(R.id.SR);
+        Logo = findViewById( R.id.Logo );
+        HR = findViewById( R.id.HR );
+        GR = findViewById( R.id.GR );
+        AR = findViewById( R.id.AR );
+        FR = findViewById( R.id.FR );
+        IR = findViewById( R.id.IR );
+        IRR = findViewById( R.id.IRR );
+        SR = findViewById( R.id.SR );
 
         anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_in);
         anim2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
@@ -77,24 +70,21 @@ public class Inicio extends AppCompatActivity {
                 //set the new Content of your activity
                 Inicio.this.setContentView(R.layout.activity_inicio);
                 Tipoletra();
-                TextView tvBlink = (TextView) findViewById(R.id.Play);
+                TextView tvBlink = findViewById( R.id.Play );
                 tvBlink.setAnimation(anim2);
             }
         }.start();
 
     }
 
-
     public void Tipoletra() {
 
         Typeface TipoLetra = Typeface.createFromAsset(getAssets(), "Imagica.ttf");
 
-        TextView Play = (TextView) findViewById(R.id.Play);
+        TextView Play = findViewById( R.id.Play );
 
         Play.setTypeface(TipoLetra);
     }
-
-
 
     public void Jogo(View v) {
 

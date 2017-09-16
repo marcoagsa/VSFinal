@@ -113,11 +113,11 @@ public class jogo extends AppCompatActivity {
 
         Typeface TipoLetra = Typeface.createFromAsset( getAssets(), "Imagica.ttf" );
 
-        ImageButton SE = (ImageButton) EscolheJogador.findViewById( R.id.SE );
-        ImageButton SD = (ImageButton) EscolheJogador.findViewById( R.id.SD );
-        final TextView NP = (TextView) EscolheJogador.findViewById( R.id.NPlayer );
-        final TextView SelectP = (TextView) EscolheJogador.findViewById( R.id.SelectP );
-        final ImageButton SP = (ImageButton) EscolheJogador.findViewById( R.id.SP );
+        ImageButton SE = EscolheJogador.findViewById( R.id.SE );
+        ImageButton SD = EscolheJogador.findViewById( R.id.SD );
+        final TextView NP = EscolheJogador.findViewById( R.id.NPlayer );
+        final TextView SelectP = EscolheJogador.findViewById( R.id.SelectP );
+        final ImageButton SP = EscolheJogador.findViewById( R.id.SP );
 
         NP.setTypeface( TipoLetra );
         SelectP.setTypeface( TipoLetra );
@@ -222,15 +222,13 @@ public class jogo extends AppCompatActivity {
         } );
     }
 
-
-
     private void Tround(int mensagem) {
 
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.custom_toast,
                 (ViewGroup) findViewById(R.id.toast_custum));
 
-        TextView text = (TextView) layout.findViewById(R.id.texttoast);
+        TextView text = layout.findViewById( R.id.texttoast );
         text.setText(mensagem);
 
 
@@ -249,7 +247,7 @@ public class jogo extends AppCompatActivity {
         View layout = inflater.inflate(R.layout.custom_toast,
                 (ViewGroup) findViewById(R.id.toast_custum));
 
-        TextView text = (TextView) layout.findViewById(R.id.texttoast);
+        TextView text = layout.findViewById( R.id.texttoast );
         text.setText(mensagem);
 
 
@@ -266,7 +264,7 @@ public class jogo extends AppCompatActivity {
 
         int valor2 = barvarlor + 50;
 
-        ProgressBar mProgressBar = (ProgressBar) findViewById(R.id.bar);
+        ProgressBar mProgressBar = findViewById( R.id.bar );
         mProgressBar.setMax(150);
 
         ObjectAnimator progressAnimator = ObjectAnimator.ofInt(mProgressBar, "progress", barvarlor, valor2);
@@ -281,7 +279,7 @@ public class jogo extends AppCompatActivity {
 
         int valor2 = bar2Valor + 50;
 
-        ProgressBar mProgressBar = (ProgressBar) findViewById(R.id.bar2);
+        ProgressBar mProgressBar = findViewById( R.id.bar2 );
         mProgressBar.setMax(150);
         mProgressBar.setRotation(180);
         ObjectAnimator progressAnimator = ObjectAnimator.ofInt(mProgressBar, "progress", bar2Valor, valor2);
@@ -315,11 +313,11 @@ public class jogo extends AppCompatActivity {
 
     private void SeekBars() {
 
-        sk1 = (SeekBar) findViewById(R.id.Sk1);
+        sk1 = findViewById( R.id.Sk1 );
         sk1.setMax(3);
         sk1.setProgress(0);
 
-        sk2 = (SeekBar) findViewById(R.id.Sk2);
+        sk2 = findViewById( R.id.Sk2 );
         sk2.setMax(6);
         sk2.setProgress(0);
         sk2.setEnabled(false);
@@ -466,7 +464,6 @@ public class jogo extends AppCompatActivity {
 
     }
 
-
     private void Verifica() {
 
         myhandler.removeCallbacksAndMessages(null);
@@ -610,18 +607,18 @@ public class jogo extends AppCompatActivity {
         Dfinal.setContentView( R.layout.custom_toast2 );
         Dfinal.setCancelable( false );
         Dfinal.setCanceledOnTouchOutside( false );
-        Jogador = (ImageView) Dfinal.findViewById( R.id.Jogador );
-        TT = (TextView) Dfinal.findViewById( R.id.GameOver );
-        TT2 = (TextView) Dfinal.findViewById( R.id.TT2 );
-        TV = (TextView) Dfinal.findViewById( R.id.TV );
-        SF = (TextView) Dfinal.findViewById( R.id.SF );
+        Jogador = Dfinal.findViewById( R.id.Jogador );
+        TT = Dfinal.findViewById( R.id.GameOver );
+        TT2 = Dfinal.findViewById( R.id.TT2 );
+        TV = Dfinal.findViewById( R.id.TV );
+        SF = Dfinal.findViewById( R.id.SF );
         TT.setText( R.string.GO );
         TT2.setText( R.string.TT2 );
 
         TV.setText( String.valueOf( tentativas ) + " " + Att );
         SF.setText( StatusFinal );
         Jogador.setImageDrawable( wtf );
-        butaoOK = (Button) Dfinal.findViewById( R.id.OK );
+        butaoOK = Dfinal.findViewById( R.id.OK );
         butaoOK.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -636,26 +633,27 @@ public class jogo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jogo);
 
-        player1 = (ImageView) findViewById(R.id.Player1);
-        player2 = (ImageView) findViewById(R.id.Player2);
-        JP1 = (ImageView) findViewById(R.id.JP1);
-        JP2 = (ImageView) findViewById(R.id.JP2);
-        JP11 = (ImageView) findViewById(R.id.JP11);
-        JP22 = (ImageView) findViewById(R.id.JP22);
-        TM = (ImageView) findViewById(R.id.TotalMoedas);
-        Moedas = (TextView) findViewById(R.id.Moedas);
-        MoedasBet = (TextView) findViewById(R.id.MoedasBet);
-        Coins = (TextView) findViewById(R.id.Coins);
-        Bet = (TextView) findViewById(R.id.Bet);
-        Fight = (TextView) findViewById(R.id.Fight);
-        butao = (ImageButton) findViewById(R.id.butao);
-        bar = (ProgressBar) findViewById(R.id.bar);
-        bar2 = (ProgressBar) findViewById(R.id.bar2);
-        Gif = (GifImageView) findViewById(R.id.Gif);
-        Ataques = (GifImageView) findViewById(R.id.Ataques);
+        player1 = findViewById( R.id.Player1 );
+        player2 = findViewById( R.id.Player2 );
+        JP1 = findViewById( R.id.JP1 );
+        JP2 = findViewById( R.id.JP2 );
+        JP11 = findViewById( R.id.JP11 );
+        JP22 = findViewById( R.id.JP22 );
+        TM = findViewById( R.id.TotalMoedas );
+        Moedas = findViewById( R.id.Moedas );
+        MoedasBet = findViewById( R.id.MoedasBet );
+        Coins = findViewById( R.id.Coins );
+        Bet = findViewById( R.id.Bet );
+        Fight = findViewById( R.id.Fight );
+        butao = findViewById( R.id.butao );
+        bar = findViewById( R.id.bar );
+        bar2 = findViewById( R.id.bar2 );
+        Gif = findViewById( R.id.Gif );
+        Ataques = findViewById( R.id.Ataques );
 
 
         Typeface TipoLetra = Typeface.createFromAsset(getAssets(), "Imagica.ttf");
+
         Fight.setTypeface(TipoLetra);
         Coins.setTypeface(TipoLetra);
         Bet.setTypeface(TipoLetra);
@@ -667,9 +665,7 @@ public class jogo extends AppCompatActivity {
 
         Splayer(player1);
 
-
         SeekBars();
-
 
         butao.setOnClickListener(new View.OnClickListener() {
             @Override
