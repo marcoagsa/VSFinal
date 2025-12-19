@@ -39,11 +39,11 @@
             android:layout_weight="1"
             android:fontFamily="sans-serif-condensed"
             android:padding="5dp"
-            android:text="@string/Desc"
             android:textAlignment="center"
             android:textColor="@color/GameOver"
             android:textSize="24sp"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal|bold"
+            tools:ignore="RtlCompat" />
 
     </TableRow>
 
@@ -58,7 +58,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_margin="5dp"
-            android:contentDescription="ImgPlayer"
+            android:contentDescription="@string/winner_player"
             android:padding="5dp"
             android:scaleType="fitCenter" />
 
@@ -78,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:padding="2dp"
-                    android:text="TT2"
+                    android:text="@string/TT2"
                     android:textColor="@android:color/background_light"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -98,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:padding="2dp"
-                    android:text="TV"
+                    android:text="@string/TV"
                     android:textColor="@android:color/background_light"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -118,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:padding="2dp"
-                    android:text="SF"
+                    android:text="@string/SF"
                     android:textColor="@android:color/background_light"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -137,7 +137,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Row2"
-        android:onClick="ButaoOK"
         android:text="@string/BOK" />
 
 

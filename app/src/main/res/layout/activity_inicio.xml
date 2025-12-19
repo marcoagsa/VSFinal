@@ -1,13 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.msandroid.vs.StartActivity">
 
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
     <TextView
         android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
@@ -17,9 +13,6 @@
         android:textColor="@android:color/holo_orange_light"
         android:textSize="50sp"
         android:textStyle="bold" />
-
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
 
     <FrameLayout
         android:layout_width="wrap_content"
@@ -49,7 +42,6 @@
                 android:layout_height="100dp"
                 android:background="@drawable/arcade_red_on"
                 android:contentDescription="@string/Desc"
-                android:onClick=""
                 android:src="@drawable/btn_click"
                 android:text="@string/Play" />
 

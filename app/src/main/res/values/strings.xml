@@ -26,4 +26,26 @@
     <string name="ToWin"> To Win !!! </string>
     <string name="WIN"> You Win !!! </string>
     <string name="BOK">OK</string>
+    <string name="Scorpio_robot">Scorpio Robot</string>
+    <string name="atomic_robot">Atomic Robot</string>
+    <string name="flying_robot">Flying Robot</string>
+    <string name="happy_robot">Happy Robot</string>
+    <string name="girl_android">Girl Android</string>
+    <string name="ironclad_robot">Ironclad Robot</string>
+    <string name="insect_robot">Insect Robot</string>
+    <string name="vs_logo">VS Logo</string>
+    <string name="winner_player">Winner Player</string>
+    <string name="TV">TV</string>
+    <string name="SF">SF</string>
+    <string name="SE">SE</string>
+    <string name="SP">SP</string>
+    <string name="SD">SD</string>
+    <string name="JP1">JP1</string>
+    <string name="JP2">JP2</string>
+    <string name="JP22">JP22</string>
+    <string name="JP11">JP11</string>
+    <string name="Button_Fight">Button Fight</string>
+    <string name="Player_1">Player 1</string>
+    <string name="Player_2">Player 2</string>
+    <string name="Total_coins">Total Coins</string>
 </resources>

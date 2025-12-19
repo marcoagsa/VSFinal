@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/toast_custum"
     style="@android:style/Animation.Toast"
     android:layout_width="match_parent"
@@ -27,7 +26,7 @@
             android:layout_margin="10dp"
             android:accessibilityLiveRegion="assertive"
             android:background="@null"
-            android:contentDescription="SE"
+            android:contentDescription="@string/SE"
             android:padding="5dp"
             android:scaleType="fitStart"
             android:src="@drawable/anterior" />
@@ -38,7 +37,7 @@
             android:layout_height="100dp"
             android:layout_margin="10dp"
             android:background="@null"
-            android:contentDescription="SP"
+            android:contentDescription="@string/SP"
             android:scaleType="fitStart"
             android:src="@drawable/atomic_robot" />
 
@@ -50,7 +49,7 @@
             android:layout_gravity="center_vertical"
             android:layout_margin="10dp"
             android:background="@null"
-            android:contentDescription="SD"
+            android:contentDescription="@string/SD"
             android:padding="5dp"
             android:scaleType="fitStart"
             android:src="@drawable/seguinte" />

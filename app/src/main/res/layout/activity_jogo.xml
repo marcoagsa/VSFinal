@@ -1,21 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:padding="16dp"
     tools:context="com.msandroid.vs.GameActivity">
-
 
     <TableRow
         android:id="@+id/Row1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
         android:layout_marginTop="5dp">
 
@@ -47,6 +40,7 @@
         android:gravity="start">
 
         <ImageView
+            android:contentDescription="@string/JP1"
             android:id="@+id/JP1"
             android:layout_margin="10dp"
             android:src="@drawable/zero_a"
@@ -54,6 +48,7 @@
             android:layout_height="30dp" />
 
         <ImageView
+            android:contentDescription="@string/JP2"
             android:id="@+id/JP2"
             android:layout_margin="10dp"
             android:src="@drawable/zero_v"
@@ -77,6 +72,7 @@
 
 
         <ImageView
+            android:contentDescription="@string/Player_1"
             android:id="@+id/Player1"
             android:layout_weight="1"
             android:layout_width="wrap_content"
@@ -85,18 +81,21 @@
             android:layout_gravity="bottom" />
 
         <ImageView
+            android:contentDescription="@string/Total_coins"
             android:id="@+id/TotalMoedas"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_vertical" />
 
         <ImageView
+            android:contentDescription="@string/Player_2"
             android:id="@+id/Player2"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:scaleType="fitEnd"
             android:layout_gravity="bottom" />
+
     </LinearLayout>
 
         <TableRow
@@ -110,7 +109,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:layout_gravity="bottom" />
-
 
         </TableRow>
 
@@ -217,6 +215,7 @@
 
 
     <ImageButton
+        android:contentDescription="@string/Button_Fight"
         android:id="@+id/butao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -234,6 +233,7 @@
         android:gravity="end">
 
         <ImageView
+            android:contentDescription="@string/JP11"
             android:id="@+id/JP11"
             android:layout_margin="10dp"
             android:src="@drawable/zero_v"
@@ -241,6 +241,7 @@
             android:layout_height="30dp" />
 
         <ImageView
+            android:contentDescription="@string/JP22"
             android:id="@+id/JP22"
             android:layout_margin="10dp"
             android:src="@drawable/zero_a"
@@ -265,6 +266,7 @@
         android:typeface="monospace" />
 
     <ImageView
+        android:contentDescription="@string/vs_logo"
         android:id="@+id/vs"
         android:adjustViewBounds="false"
         android:cropToPadding="false"
@@ -273,7 +275,7 @@
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/linha2"
         android:layout_width="50dp"
-        android:layout_height="50dp"></ImageView>
+        android:layout_height="50dp" />
 
 
 </RelativeLayout>

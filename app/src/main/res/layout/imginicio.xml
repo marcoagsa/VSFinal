@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,8 +13,8 @@
         android:layout_marginBottom="64dp"
         android:id="@+id/progressBar" />
 
-
     <ImageView
+        android:contentDescription="@string/vs_logo"
         android:id="@+id/Logo"
         android:layout_width="300dp"
         android:layout_height="300dp"
@@ -27,6 +26,7 @@
         android:layout_centerHorizontal="true" />
 
     <ImageView
+        android:contentDescription="@string/ironclad_robot"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:srcCompat="@drawable/ironclad_robot"
@@ -36,6 +36,7 @@
         android:layout_marginBottom="33dp" />
 
     <ImageView
+        android:contentDescription="@string/insect_robot"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:srcCompat="@drawable/insect_robot"
@@ -44,6 +45,7 @@
         android:layout_alignParentEnd="true" />
 
     <ImageView
+        android:contentDescription="@string/girl_android"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:srcCompat="@drawable/girl_android"
@@ -53,6 +55,7 @@
         android:layout_marginStart="18dp" />
 
     <ImageView
+        android:contentDescription="@string/happy_robot"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:srcCompat="@drawable/happy_robot"
@@ -61,6 +64,7 @@
         android:layout_centerHorizontal="true" />
 
     <ImageView
+        android:contentDescription="@string/flying_robot"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:srcCompat="@drawable/flying_robot"
@@ -69,6 +73,7 @@
         android:layout_toStartOf="@+id/progressBar" />
 
     <ImageView
+        android:contentDescription="@string/Scorpio_robot"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:srcCompat="@drawable/atomic_robot"
@@ -77,6 +82,7 @@
         android:layout_toEndOf="@+id/progressBar" />
 
     <ImageView
+        android:contentDescription="@string/Scorpio_robot"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:srcCompat="@drawable/scorpio_robot"
