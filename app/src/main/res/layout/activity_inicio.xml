@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.msandroid.vs.Inicio">
+    tools:context="com.msandroid.vs.StartActivity">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
@@ -49,7 +49,7 @@
                 android:layout_height="100dp"
                 android:background="@drawable/arcade_red_on"
                 android:contentDescription="@string/Desc"
-                android:onClick="Jogo"
+                android:onClick=""
                 android:src="@drawable/btn_click"
                 android:text="@string/Play" />
 

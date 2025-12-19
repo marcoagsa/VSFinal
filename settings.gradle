@@ -1,1 +1,20 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    // MUDA ISTO: de FAIL_ON_PROJECT_REPOS para PREFER_PROJECT
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "VSFinal"
 include ':app'
